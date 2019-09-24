@@ -12,12 +12,27 @@ body {
 	font-size: 16px;
 }
 
+.buttonFalse {
+			 background-color: #1c87c9;
+			 border: none;
+			 color: white;
+			 padding: 20px 34px;
+			 object-position: center;
+			 text-align: center;
+			 text-decoration: none;
+			 display: inline-block;
+			 font-size: 20px;
+			margin-left: 40%;
+
+			 cursor: pointer;
+			 }
+
 .wrap {
-  
+
 
 	margin: auto;
 	max-width: 800px;
-	width: 90%;
+	width: 100%;
 }
 
 .principal {

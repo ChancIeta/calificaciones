@@ -40,9 +40,7 @@
 		teareaInput.setAttribute("placeholder", "Agrega tu tarea");
 	};
 
-	var eleminarTarea = function(){
-		this.parentNode.removeChild(this);
-	};
+
 
 	// Eventos
 

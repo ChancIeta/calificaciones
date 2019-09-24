@@ -4,17 +4,19 @@
 <div class="container">
   <head>
   <!-- Scripts -->
-  <script src="{{ asset('js/actividades.js') }}" defer></script>
+<!--  <script src="{{ asset('js/actividades.js') }}" defer></script>-->
   <link href="{{ asset('css/actividades.css') }}" rel="stylesheet">
 </head>
   <!-- partial:index.partial.html -->
    <section class="section">
        <h1>Actividades</h1>
+       <h2>{{$proyecto->title}}</h2>
+       <p>{{$proyecto->description}}</p>
 
    </section>
-   <form action="Actividad.html">
-       <input type="submit" class="boton" id="btn-agregar" value="Aregar Actividad">
-   </form>
+
+   <a href="{{route("createActivitie")}}" class="buttonFalse">Agregar Proyecto</a>
+
    <div class="drag-container">
        <ul class="drag-list">
            <li class="drag-column drag-column-on-hold">
@@ -26,7 +28,7 @@
                <div class="drag-options" id="options1"></div>
 
                <ul class="drag-inner-list" id="1">
-                   <li class="drag-item"></li>
+                   <li class="drag-item"><a href="/actividad"> Prueba</a></li>
                    <li class="drag-item"></li>
                </ul>
            </li>
@@ -71,6 +73,7 @@
 
 
    <!-- partial -->
+
    <script src='https://s3-us-west-2.amazonaws.com/s.cdpn.io/45226/dragula.min.js'></script>
 
 

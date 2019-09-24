@@ -67,8 +67,9 @@
         <div class="flex-center position-ref full-height">
             @if (Route::has('login'))
                 <div class="top-right links">
+
                     @auth
-                        <a href="{{ url('/home') }}">Home</a>
+                        <a href="/profile/{{Auth::user()->id}}">Home</a>
                     @else
                         <a href="{{ route('login') }}">Login</a>
 
@@ -81,8 +82,13 @@
 
             <div class="content">
                 <div class="title m-b-md">
-                    Fast-Traking
+                    Bienvenido
+                    @auth
+                     {{ Auth::user()->name }}
+                    @endauth
                 </div>
+
+            <!--    <h1>{{username</h1>  -->
 
                 <div class="links">
                     <a href="https://laravel.com/docs">Docs</a>

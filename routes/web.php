@@ -17,4 +17,15 @@ Route::get('/', function () {
 
 Auth::routes();
 
-Route::get('/home', 'HomeController@index')->name('home');
+
+Route::get('/p/create','ProyectoController@create')->name('createProyect');
+Route::post ('/p','ProyectoController@store');
+
+Route::get('/a/create','activitiesController@create')->name('createActivitie');
+
+Route::get('/actividad','activitiesController@index')->name('Actividad.show');
+
+Route::get('/profile/{user}', 'ProfilesController@index')->name('profile.show');
+
+Route::get('/Actividades/{proyecto}','ProyectoController@show')->name('actividades.show');
+                        /*/{proyecto}*/
