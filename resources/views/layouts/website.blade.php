@@ -8,7 +8,7 @@
         <meta name="author" content="">
         <!-- CSRF Token -->
         <meta name="csrf-token" content="{{ csrf_token() }}">
-        <title>{{ config('app.name', 'SC') }}</title>
+        <title>{{ config('app.name', 'SC') }} - @yield('title')</title>
         <!-- Custom fonts for this template-->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
     </head>
@@ -351,5 +351,10 @@
         </div>
         <!-- Bootstrap core JavaScript-->
         <script src="{{ asset('js/app.js') }}"></script>
+        <script>
+            $("#sidebarMenuButton").click(function(){
+                $("#sidebarMenu").toggle();
+            });
+        </script>
     </body>
 </html>
