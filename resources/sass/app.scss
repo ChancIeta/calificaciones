@@ -1,8 +1,16 @@
-// Fonts
-@import url('https://fonts.googleapis.com/css?family=Nunito');
+/*
+ * Codigo de Bootstrap
+ */
+@import "../../node_modules/bootstrap/scss/bootstrap.scss";
+@import "../../node_modules/bootstrap/scss/bootstrap-grid.scss";
 
-// Variables
-@import 'variables';
+/*
+ * Codigo del template
+ */
+@import "../../node_modules/startbootstrap-sb-admin-2/scss/sb-admin-2.scss";
 
-// Bootstrap
-@import '~bootstrap/scss/bootstrap';
+/*
+ * Codigo de la font
+ */
+@import "./font-awesome.css"; 
+
