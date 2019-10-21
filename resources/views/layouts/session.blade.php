@@ -11,14 +11,21 @@
         <title>{{ config('app.name', 'SC') }} - @yield('title')</title>
         <!-- Custom fonts for this template-->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+
         @yield("style")
+        
     </head>
     <body class="bg-gradient-primary">
         <div class="container">
+
             @yield("content")
+            @yield('contenido-de-ejemplo')
+
         </div>
         <!-- Bootstrap core JavaScript-->
         <script src="{{ asset('js/app.js') }}"></script>
+
         @yield("script")
+
     </body>
 </html>
