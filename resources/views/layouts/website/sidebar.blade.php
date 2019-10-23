@@ -52,6 +52,13 @@
             </div>
         </div>
     </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" href="/u/create" >
+
+            <span>Usuarios</span>
+        </a>
+
+    </li>
     <!-- Divider -->
     <hr class="sidebar-divider">
     <!-- Heading -->

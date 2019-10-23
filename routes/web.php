@@ -15,9 +15,8 @@ Route::get('/', function () {
 });
 
 
-Route::get('/example/hola','ExampleController@main');
-
-Route::get('/example/login','ExampleController@dobleMain');
+Route::get('/u/create','users@ver')->name('createUsers');
+Route::post('/u','users@store');
 
 Auth::routes();
 //login
@@ -29,13 +28,13 @@ Auth::routes();
 
 //Route::group([ 'middleware' => ['auth'], 'prefix' => 'student', 'as'=>'student.' ], function () {
 Route::group([ 'middleware' => ['auth']], function () {
-   
+
     //compras
     //compras/nueva
     //compras/editar/
     //compras/eliminar
     //
-   
+
     Route::get('/', 'Dashboards\MainController@index')->name('dashboard');
 
 
