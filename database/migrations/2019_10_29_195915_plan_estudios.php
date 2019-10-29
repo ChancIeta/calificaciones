@@ -13,13 +13,13 @@ class PlanEstudios extends Migration
      */
     public function up()
     {
-        Schema::create('asignaturas_series', function (Blueprint $table) {
+        Schema::create('plan_estudios', function (Blueprint $table) {
             $table->bigIncrements('id');
             
             //Asignatura padre, del cual esta seriada la materia
-            $table->unsignedInteger('carrera_id');
+            $table->unsignedBigInteger('carrera_id');
             //Asignatura seriada
-            $table->unsignedInteger('asignaturas_id');
+            $table->unsignedBigInteger('asignatura_id');
             $table->string('semestre');
 
             /*

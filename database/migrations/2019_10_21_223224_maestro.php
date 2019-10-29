@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class Asignaturas extends Migration
+class Maestro extends Migration
 {
     /**
      * Run the migrations.
@@ -13,11 +13,15 @@ class Asignaturas extends Migration
      */
     public function up()
     {
-        Schema::create('asignaturas', function (Blueprint $table) {
+        Schema::create('maestros', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('name');
-            $table->string('code');
-            $table->integer('unidades');
+            $table->unsignedBigInteger('users_id');
+            $table->string('titulo');
+            
+            /*
+            * foreign keys 
+            */
+            $table->foreign('users_id')->references('id')->on('users');
             $table->timestamps();
         });
     }
