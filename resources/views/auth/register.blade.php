@@ -22,36 +22,41 @@
                                     @enderror
                                 </div>
                                 <div class="form-group">
-                                    <input type="email" id="email" name="email" class="form-control form-control-user @error('email') is-invalid @enderror" placeholder="{{ __('Correo Electronico') }}" value="{{ old('email') }}" required autocomplete="name" autofocus aria-describedby="EmailHelp">
+                                    <input type="text" id="username" name="username" class="form-control form-control-user @error('username') is-invalid @enderror" placeholder="{{ __('Usuario') }}" value="{{ old('username') }}" required autocomplete="username" autofocus aria-describedby="UsernamelHelp">
+                                    @error('username')
+                                        <span class="invalid-feedback" role="alert">
+                                            <strong>{{ $message }}</strong>
+                                        </span>
+                                    @enderror
+                                </div>
+                                <div class="form-group">
+                                    <input type="email" id="email" name="email" class="form-control form-control-user @error('email') is-invalid @enderror" placeholder="{{ __('Correo Electronico') }}" value="{{ old('email') }}" required autocomplete="email" autofocus aria-describedby="EmailHelp">
                                     @error('email')
                                         <span class="invalid-feedback" role="alert">
                                             <strong>{{ $message }}</strong>
                                         </span>
                                     @enderror
                                 </div>
-                                <div class="form-group">
-                                    <input type="text" id="username" name="username" class="form-control form-control-user @error('username') is-invalid @enderror" placeholder="{{ __('Usuario') }}" value="{{ old('email') }}" required autocomplete="username" autofocus aria-describedby="EmailHelp">
-                                    @error('username')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+                                <div class="form-group row">
+                                    <label for="password" class="col-md-4 col-form-label text-md-right">{{ __('Password') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="password" type="password" class="form-control @error('password') is-invalid @enderror" name="password"  autocomplete="new-password">
+
+                                        @error('password')
+                                            <span class="invalid-feedback" role="alert">
+                                                <strong>{{ $message }}</strong>
+                                            </span>
+                                        @enderror
+                                    </div>
                                 </div>
-                                <div class="form-group">
-                                    <input type="password" id="password" name="password" class="form-control form-control-user @error('password') is-invalid @enderror" placeholder="{{ __('Contraseña') }}" value="{{ old('password') }}" required autocomplete="password" autofocus aria-describedby="PasswordHelp">
-                                    @error('username')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
-                                </div>
-                                <div class="form-group">
-                                    <input type="password" id="password-confirm" name="password-confirm" class="form-control form-control-user @error('password-confirm') is-invalid @enderror" placeholder="{{ __('Contraseña') }}" required autocomplete="password-new" autofocus aria-describedby="PasswordHelp">
-                                    @error('password-confirm')
-                                        <span class="invalid-feedback" role="alert">
-                                            <strong>{{ $message }}</strong>
-                                        </span>
-                                    @enderror
+
+                                <div class="form-group row">
+                                    <label for="password-confirm" class="col-md-4 col-form-label text-md-right">{{ __('Confirm Password') }}</label>
+
+                                    <div class="col-md-6">
+                                        <input id="password-confirm" type="password" class="form-control" name="password_confirmation"  autocomplete="new-password">
+                                    </div>
                                 </div>
                                 <button class="btn btn-primary btn-user btn-block" type="submit">
                                     {{ __('Login') }}
