@@ -15,7 +15,6 @@ class Alumno extends Migration
     {
         Schema::create('alumnos', function (Blueprint $table) {
             $table->bigIncrements('id');
-            $table->string('titulo');
             $table->integer('semestre');
             
             $table->unsignedBigInteger('users_id');

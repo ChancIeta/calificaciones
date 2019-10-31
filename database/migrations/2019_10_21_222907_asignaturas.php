@@ -20,6 +20,7 @@ class Asignaturas extends Migration
             $table->integer('unidades');
             $table->timestamps();
         });
+        
     }
 
     /**

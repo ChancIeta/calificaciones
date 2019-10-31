@@ -11,6 +11,7 @@
         <title>{{ config('app.name', 'SC') }} - @yield('title')</title>
         <!-- Custom fonts for this template-->
         <link href="{{ asset('css/app.css') }}" rel="stylesheet" type="text/css">
+
         @yield("style")
         
     </head>

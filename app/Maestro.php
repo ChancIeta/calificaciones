@@ -6,14 +6,13 @@ use Illuminate\Database\Eloquent\Model;
 
 class Maestro extends Model
 {
-   protected $table = "maestros";
-    
+    protected $table = "maestros";
+   
     public function user(){
         return $this->belongsTo(User::class, 'users_id');
     }
     
     public function avanceCarrera(){
-//        return $this->hasMany(ProgresoSemestral::class, '');
         return $this->hasMany(ProgresoSemestral::class, 'maestro_id');
     }
 }
