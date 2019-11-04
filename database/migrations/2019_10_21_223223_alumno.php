@@ -20,8 +20,8 @@ class Alumno extends Migration
             $table->unsignedBigInteger('users_id');
             $table->unsignedBigInteger('carreras_id');
             /*
-            * foreign keys 
-            */
+             * foreign keys 
+             */
             $table->foreign('users_id')->references('id')->on('users');
             $table->foreign('carreras_id')->references('id')->on('carreras');
             $table->timestamps();

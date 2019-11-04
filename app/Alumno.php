@@ -5,12 +5,15 @@ namespace App;
 use Illuminate\Database\Eloquent\Model;
 use App\User;
 use App\ProgresoSemestral;
+use App\Carreras;
 
 
 
 class Alumno extends Model
 {
     protected $table = "alumnos";
+    
+    protected $fillable = ['semestre','users_id','carreras_id'];
     
     /*
         Schema::create('alumnos', function (Blueprint $table) {
@@ -33,5 +36,8 @@ class Alumno extends Model
     
     public function avanceCarrera(){
         return $this->hasMany(ProgresoSemestral::class, 'alumno_id');
+    }
+    public function carrera(){
+        return $this->belongsTo(Carreras::class, 'carreras_id');
     }
 }

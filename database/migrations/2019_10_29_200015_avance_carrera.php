@@ -13,7 +13,7 @@ class AvanceCarrera extends Migration
      */
     public function up()
     {
-        Schema::create('avance_carera', function (Blueprint $table) {
+        Schema::create('progreso_cursado', function (Blueprint $table) {
             $table->bigIncrements('id');
             
             //Asignatura padre, del cual esta seriada la materia
@@ -24,7 +24,6 @@ class AvanceCarrera extends Migration
             $table->unsignedBigInteger('alumno_id');
             $table->unsignedBigInteger('maestro_id');
             $table->enum('estatus',['cursando','aprovada','reprobada','sin cursar']);
-
             /*
             *foreign keys 
             */

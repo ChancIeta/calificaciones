@@ -16,8 +16,7 @@ class Maestro extends Migration
         Schema::create('maestros', function (Blueprint $table) {
             $table->bigIncrements('id');
             $table->unsignedBigInteger('users_id');
-            $table->string('titulo');
-            
+            $table->string('titulo');            
             /*
             * foreign keys 
             */

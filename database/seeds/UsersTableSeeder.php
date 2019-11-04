@@ -14,12 +14,6 @@ class UsersTableSeeder extends Seeder
      */
     public function run()
     {
-        /*
-         * name
-         * email
-         * username
-         * password
-         */
         $user = new User();
         $user->name = "Alberto Virrey";
         $user->email = "juan.javc06@gmail.com";

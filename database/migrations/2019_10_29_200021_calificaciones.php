@@ -17,7 +17,7 @@ class Calificaciones extends Migration
             $table->bigIncrements('id');
             
             //Asignatura padre, del cual esta seriada la materia
-            $table->unsignedBigInteger('avance_carera');
+            $table->unsignedBigInteger('progreso_cursado_id');
             //Asignatura seriada
 
             $table->decimal('calificacion');
@@ -26,7 +26,7 @@ class Calificaciones extends Migration
             /*
             *foreign keys 
             */
-            $table->foreign('avance_carera')->references('id')->on('avance_carera');
+            $table->foreign('progreso_cursado_id')->references('id')->on('progreso_cursado');
             $table->timestamps();
         });
     }

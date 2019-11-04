@@ -11,6 +11,6 @@ class PlanEstudiosTableSeeder extends Seeder
      */
     public function run()
     {
-        //
+        
     }
 }

@@ -1,12 +1,20 @@
-//import 'jquery';
+//import $ from 'jquery';
+//import $ from 'jquery';
+import Popper from 'popper.js/dist/umd/popper.js';
+//import SBAdmin from 'startbootstrap-sb-admin-2/js/sb-admin-2.js';
 //import 'popper';
-//import 'bootstrap';
-//
+
+/*
+import $ from 'jquery';
+window.$ = window.jQuery = $;
+ */
 //import * as jquery from 'jquery';
 //import * as bootstrap from 'bootstrap';
 
 window._ = require('lodash');
-import Popper from 'popper.js/dist/umd/popper.js';
+
+
+//import SBAdmin from 'startbootstrap-sb-admin-2/js/sb-admin-2.js';
 /**
  * We'll load jQuery and the Bootstrap jQuery plugin which provides support
  * for JavaScript based Bootstrap features such as modals and tabs. This
@@ -17,6 +25,8 @@ try {
     window.$ = window.jQuery = require('jquery');
     window.Popper = Popper;
     require('bootstrap');
+    require('startbootstrap-sb-admin-2/js/sb-admin-2.js');
+//    window.SBAdmin = SBAdmin;
 } catch (e) {
 }
 
@@ -26,7 +36,7 @@ try {
  * and simple, leaving you to focus on building your next great project.
  */
 
-window.Vue = require('vue');
+//window.Vue = require('vue');
 
 /**
  * We'll load the axios HTTP library which allows us to easily issue requests
@@ -36,7 +46,7 @@ window.Vue = require('vue');
 
 window.axios = require('axios');
 
-window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
+//window.axios.defaults.headers.common['X-Requested-With'] = 'XMLHttpRequest';
 
 /**
  * Next we will register the CSRF Token as a common header with Axios so that

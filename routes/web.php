@@ -27,15 +27,11 @@ Auth::routes();
 //new/password
 
 //Route::group([ 'middleware' => ['auth'], 'prefix' => 'student', 'as'=>'student.' ], function () {
-Route::group([ 'middleware' => ['auth']], function () {
-
-    //compras
-    //compras/nueva
-    //compras/editar/
-    //compras/eliminar
-    //
-
+Route::group([ 'middleware' => ['auth'], 'prefix' => 'dashboard'], function () {
     Route::get('/', 'Dashboards\MainController@index')->name('dashboard');
 
+    Route::post('/role', 'Dashboards\MainController@registerRole')->name('set.role');
+    Route::get('/asignaturas', 'EvaluationController@view')->name('asignaturas');
+    Route::get('/calificaciones/{id}', 'EvaluationController@evaluationView')->name('evaluation');
 
 });
