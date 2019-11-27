@@ -14,6 +14,11 @@ Route::get('/', function () {
     return redirect()->route('login');
 });
 
+//use App\User;
+//Route::get('/sss', function () {
+//    return User::count();
+//});
+
 
 Route::get('/u/create','users@ver')->name('createUsers');
 Route::post('/u','users@store');
@@ -27,11 +32,34 @@ Auth::routes();
 //new/password
 
 //Route::group([ 'middleware' => ['auth'], 'prefix' => 'student', 'as'=>'student.' ], function () {
-Route::group([ 'middleware' => ['auth'], 'prefix' => 'dashboard'], function () {
-    Route::get('/', 'Dashboards\MainController@index')->name('dashboard');
+Route::group([ 'middleware' => ['auth'], 'prefix' => 'dashboard','as'=>'dashboard.'], function () {
+    Route::get('/', 'Dashboards\MainController@index')->name('index');
 
     Route::post('/role', 'Dashboards\MainController@registerRole')->name('set.role');
     Route::get('/asignaturas', 'EvaluationController@view')->name('asignaturas');
     Route::get('/calificaciones/{id}', 'EvaluationController@evaluationView')->name('evaluation');
+
+
+    //Rutas del administrador
+    Route::group([ 'middleware' => ['admin']], function () {
+
+        //Rutas del CRUD de usuarios
+        Route::group([ 'prefix' => 'users','as'=>'users.' ], function () {
+            Route::get('/','UsersController@index')->name('index');
+
+            Route::get('create','UsersController@create')->name('create');
+            Route::post('create','UsersController@store')->name('create');
+
+            Route::get('edit/{id}','UsersController@edit')->name('create');
+            Route::post('edit/{id}','UsersController@update')->name('create');
+
+
+        });
+
+
+    });
+
+
+
 
 });

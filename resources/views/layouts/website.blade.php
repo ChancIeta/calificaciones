@@ -48,10 +48,10 @@
             });
         </script>
         @include("admin.modals.modalconfiguracionUser")
-        @if (Auth::user()->alumno()->count() == 0 && Auth::user()->profesor()->count() == 0 )
-        @include("admin.modals.modalRolUsuario")
-        <script>$("#modalRole").modal();</script>
-        @endif
+            @if (Auth::user()->alumno()->count() == 0 && Auth::user()->profesor()->count() == 0 && Auth::user()->rol != 1)
+                @include("admin.modals.modalRolUsuario")
+                <script>$("#modalRole").modal();</script>
+            @endif
         @yield("script")
     </body>
 </html>

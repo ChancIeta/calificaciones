@@ -10,7 +10,7 @@
     <hr class="sidebar-divider my-0">
     <!-- Nav Item - Dashboard -->
     <li class="nav-item active">
-        <a class="nav-link" href="{{ route("dashboard") }}">
+        <a class="nav-link" href="{{ route("dashboard.index") }}">
             <i class="fa fa-fw fa-tachometer-alt"></i>
             <span>Dashboard</span>
         </a>
@@ -19,18 +19,36 @@
     <hr class="sidebar-divider">
     <!-- Heading -->
     <div class="sidebar-heading">
-
+        Usuarios
     </div>
     <!-- Nav Item - Pages Collapse Menu -->
     <li class="nav-item">
-
+        <a class="nav-link collapsed" href="/u/create" >
+            <i class="fa fa-fw fa-users"></i>
+            <span>Usuarios</span>
+        </a>
+    </li>
+    <li class="nav-item">
+        <a class="nav-link collapsed" data-toggle="collapse" href="#usuarios" role="button" aria-expanded="false" aria-controls="collapseExample">
+            <i class="fa fa-fw fa-cog"></i>
+            <span>Usuarios</span>
+        </a>
+        <div class="collapse" id="usuarios">
+            <div class="list-group">
+                <a href="{{ route('dashboard.users.index') }}" class="list-group-item list-group-item-action">Lista</a>
+                <a href="#" class="list-group-item list-group-item-action">Alumnos Actuales</a>
+                <a href="#" class="list-group-item list-group-item-action">Alumnos Previos</a>
+            </div>
+        </div>
+    </li>
+    <li class="nav-item">
         <a class="nav-link collapsed" data-toggle="collapse" href="#maestros" role="button" aria-expanded="false" aria-controls="collapseExample">
             <i class="fa fa-fw fa-cog"></i>
             <span>Maestros</span>
         </a>
         <div class="collapse" id="maestros">
             <div class="list-group">
-                <a href="{{ route('asignaturas') }}" class="list-group-item list-group-item-action">Asignaturas</a>
+                <a href="{{ route('dashboard.asignaturas') }}" class="list-group-item list-group-item-action">Asignaturas</a>
                 <a href="#" class="list-group-item list-group-item-action">Alumnos Actuales</a>
                 <a href="#" class="list-group-item list-group-item-action">Alumnos Previos</a>
             </div>
@@ -42,13 +60,6 @@
             <i class="fa fa-fw fa-wrench"></i>
             <span>Utilities</span>
         </a>
-    </li>
-    <li class="nav-item">
-        <a class="nav-link collapsed" href="/u/create" >
-
-            <span>Usuarios</span>
-        </a>
-
     </li>
     <!-- Divider -->
     <hr class="sidebar-divider">

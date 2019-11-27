@@ -39,7 +39,9 @@
         <li class="nav-item">
             <div class="nav-link">
                 <span class="mr-2 d-none d-lg-inline text-gray-600 small">
-                    @if (Auth::user()->alumno()->count() != 0 && Auth::user()->profesor()->count() != 0 )
+                    @if (Auth::user()->rol == 1)
+                        Administrador
+                    @elseif (Auth::user()->alumno()->count() != 0 && Auth::user()->profesor()->count() != 0 )
                         Maestro\Alumno
                     @elseif (Auth::user()->alumno()->count())
                         Alumno
