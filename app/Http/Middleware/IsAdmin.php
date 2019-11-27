@@ -17,6 +17,6 @@ class IsAdmin
     {
         if (\Auth::user()->rol == 1)
             return $next($request);
-        return redirect('/dashboard');
+        abort(403, 'No tienes permisos de administrador');
     }
 }
