@@ -32,7 +32,7 @@
                             <tr>
                                 <th scope="row">{{ $user->id }}</th>
                                 <th scope="row">{{ $user->username }}</th>
-                                <th scope="row">{{ $user->nombre }}</th>
+                                <th scope="row">{{ $user->name }}</th>
                                 <th scope="row">{{ $user->email }}</th>
                                 <th scope="row">
                                     @if ($user->rol == 1)
@@ -47,10 +47,9 @@
                                         Sin Rol
                                     @endif
                                 </th>
-
                                 <td>
-                                    <a class="btn btn-secondary" title="Calificar" href="">
-                                        <i class="fa fa-check-square"></i> Calificar
+                                    <a class="btn btn-outline-success" title="Editar" href="">
+                                        <i class="fa fa-edit"></i>
                                     </a>
                                 </td>
                             </tr>

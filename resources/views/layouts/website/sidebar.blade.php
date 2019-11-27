@@ -36,7 +36,7 @@
         <div class="collapse" id="usuarios">
             <div class="list-group">
                 <a href="{{ route('dashboard.users.index') }}" class="list-group-item list-group-item-action">Lista</a>
-                <a href="#" class="list-group-item list-group-item-action">Alumnos Actuales</a>
+                <a href="{{ route('dashboard.users.create') }}" class="list-group-item list-group-item-action">Crear Usuariao</a>
                 <a href="#" class="list-group-item list-group-item-action">Alumnos Previos</a>
             </div>
         </div>

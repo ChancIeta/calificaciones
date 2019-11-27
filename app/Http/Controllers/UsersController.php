@@ -15,13 +15,16 @@ class UsersController extends Controller
             Route::post('edit/{id}','UsersController@Update')->name('create');
 
      * */
+
+    //Lista de usuarios
     public function index(){
+        //Realizar una paginacion de 10
         $users = User::paginate(10);
         return view('admin.users', compact('users'));
 
     }
     public function create(){
-
+        return view('admin.users.form');
     }
     public function store(){
 

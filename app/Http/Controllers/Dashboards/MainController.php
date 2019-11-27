@@ -42,7 +42,6 @@ class MainController extends Controller {
             $maestro->titulo = $data['titulo'];
             $maestro->save();
         }
-        return redirect()->route('dashboard');
+        return redirect()->route('dashboard.index');
     }
 }
-    
